@@ -1,0 +1,1353 @@
+{
+  "symbol": "ASTER",
+  "name": "Aster Systems",
+  "sector": "Industrial equipment",
+  "archetype": "industrial",
+  "currency": "USD",
+  "description": "Fictional capacity-led supplier. Qualified output earns value only after shipments and capital costs.",
+  "price": 31.0,
+  "price_as_of": "2026-06-30T20:00:00+00:00",
+  "as_of": "2026-07-01T16:00:00+00:00",
+  "financials": {
+    "currency": "USD",
+    "amount_unit": "USD millions",
+    "share_unit": "million shares",
+    "period": "LTM ending 2026-06-30",
+    "period_type": "annual",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "revenue": 380.0,
+    "operating_nwc": 45.6,
+    "installed_capacity": 12.0,
+    "qualified_capacity": 10.0,
+    "capacity_unit": "million units",
+    "unit_price": 50.0,
+    "variable_cost_per_unit": 26.0,
+    "fixed_operating_cost": 80.0,
+    "debt": 110.0,
+    "cash": 60.0,
+    "minorities": 8.0,
+    "diluted_shares": 30.0
+  },
+  "assumptions": {
+    "qualified_utilization": 0.76,
+    "utilization_ramp": 0.01,
+    "installed_capacity_growth": 0.05,
+    "qualified_capacity_growth": 0.05,
+    "unit_price_growth": 0.015,
+    "variable_cost_growth": 0.018,
+    "fixed_cost_growth": 0.018,
+    "capacity_cost_per_unit": 24.0,
+    "maintenance_cost_per_unit": 2.0,
+    "depreciation_per_capacity_unit": 1.7,
+    "nwc_ratio": 0.12,
+    "tax_rate": 0.25,
+    "discount_rate": 0.1,
+    "terminal_growth": 0.025,
+    "terminal_roic": 0.18,
+    "exit_ebit_multiple": 10.0
+  },
+  "thesis": {
+    "statement": "Qualification can convert installed equipment into profitable shipments, if reinvestment does not absorb the gains.",
+    "drivers": [
+      {
+        "id": "qualified_utilization",
+        "label": "Qualified utilization",
+        "value": 0.76,
+        "unit": "ratio",
+        "evidence_ids": [
+          "aster-capacity"
+        ],
+        "watch_condition": "Review if utilization stays below 65% for two reporting periods."
+      },
+      {
+        "id": "qualified_capacity_growth",
+        "label": "Qualified capacity growth",
+        "value": 0.05,
+        "unit": "annual ratio",
+        "evidence_ids": [
+          "aster-capacity",
+          "aster-opposition"
+        ],
+        "watch_condition": "Review if qualification growth trails installed capacity for two periods."
+      },
+      {
+        "id": "capacity_cost_per_unit",
+        "label": "Expansion capital per capacity unit",
+        "value": 24.0,
+        "unit": "USD/unit",
+        "evidence_ids": [
+          "aster-cash"
+        ],
+        "watch_condition": "Review if expansion capital exceeds USD 30 per unit."
+      }
+    ],
+    "falsifiers": [
+      "Qualified output cannot be shipped at the assumed unit economics.",
+      "Two successive periods show capital spending above the operating cash improvement."
+    ],
+    "counterevidence": [
+      "Qualification may lag equipment availability.",
+      "Customer substitution can reduce price while capital is already committed."
+    ],
+    "next_review": "2026-08-15"
+  },
+  "evidence": [
+    {
+      "id": "aster-capacity",
+      "title": "Qualified output, synthetic annual period",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://aster/capacity",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "retrieved_at": "2026-07-01T13:00:00+00:00",
+      "usable_at": "2026-07-01T14:00:00+00:00",
+      "period": "LTM ending 2026-06-30",
+      "period_type": "annual",
+      "unit": "million units; ratio; USD/unit",
+      "currency": "USD",
+      "locator": "Synthetic demonstration, operating bridge table",
+      "content": "Installed capacity is 12 million units; 10 million are qualified. Qualified utilization is 76%, with USD 50 realized revenue per unit.",
+      "classification": "confirmed_fact",
+      "verified": true
+    },
+    {
+      "id": "aster-cash",
+      "title": "Capital and claims, synthetic annual period",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://aster/cash",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "retrieved_at": "2026-07-01T13:00:00+00:00",
+      "usable_at": "2026-07-01T14:00:00+00:00",
+      "period": "LTM ending 2026-06-30",
+      "period_type": "annual",
+      "unit": "USD millions; million shares; USD/capacity unit",
+      "currency": "USD",
+      "locator": "Synthetic demonstration, operating bridge table",
+      "content": "Maintenance costs USD 2 per installed capacity unit; incremental installed capacity costs USD 24 per unit. Debt 110, available cash 60, minority claims 8, and diluted shares 30, all in millions.",
+      "classification": "confirmed_fact",
+      "verified": true
+    },
+    {
+      "id": "aster-opposition",
+      "title": "Qualification bottleneck, synthetic observation",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://aster/opposition",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "retrieved_at": "2026-07-01T13:00:00+00:00",
+      "usable_at": "2026-07-01T14:00:00+00:00",
+      "period": "LTM ending 2026-06-30",
+      "period_type": "annual",
+      "unit": "qualitative",
+      "currency": "USD",
+      "locator": "Synthetic demonstration, operating bridge table",
+      "content": "Customer qualification can lag installed equipment. Qualification does not establish shipments or recognized revenue.",
+      "classification": "confirmed_fact",
+      "verified": true
+    }
+  ],
+  "prices": [
+    {
+      "date": "2025-07-30",
+      "close": 24.034648,
+      "volume": 702000
+    },
+    {
+      "date": "2025-07-31",
+      "close": 24.122469,
+      "volume": 709919
+    },
+    {
+      "date": "2025-08-01",
+      "close": 24.209052,
+      "volume": 717838
+    },
+    {
+      "date": "2025-08-04",
+      "close": 24.294066,
+      "volume": 725757
+    },
+    {
+      "date": "2025-08-05",
+      "close": 24.377189,
+      "volume": 733676
+    },
+    {
+      "date": "2025-08-06",
+      "close": 24.458112,
+      "volume": 741595
+    },
+    {
+      "date": "2025-08-07",
+      "close": 24.536536,
+      "volume": 749514
+    },
+    {
+      "date": "2025-08-08",
+      "close": 24.612179,
+      "volume": 757433
+    },
+    {
+      "date": "2025-08-11",
+      "close": 24.684775,
+      "volume": 765352
+    },
+    {
+      "date": "2025-08-12",
+      "close": 24.754075,
+      "volume": 773271
+    },
+    {
+      "date": "2025-08-13",
+      "close": 24.81985,
+      "volume": 781190
+    },
+    {
+      "date": "2025-08-14",
+      "close": 24.881893,
+      "volume": 789109
+    },
+    {
+      "date": "2025-08-15",
+      "close": 24.940018,
+      "volume": 797028
+    },
+    {
+      "date": "2025-08-18",
+      "close": 24.994062,
+      "volume": 804947
+    },
+    {
+      "date": "2025-08-19",
+      "close": 25.043886,
+      "volume": 812866
+    },
+    {
+      "date": "2025-08-20",
+      "close": 25.089377,
+      "volume": 820785
+    },
+    {
+      "date": "2025-08-21",
+      "close": 25.130447,
+      "volume": 828704
+    },
+    {
+      "date": "2025-08-22",
+      "close": 25.167035,
+      "volume": 836623
+    },
+    {
+      "date": "2025-08-25",
+      "close": 25.199104,
+      "volume": 844542
+    },
+    {
+      "date": "2025-08-26",
+      "close": 25.226646,
+      "volume": 852461
+    },
+    {
+      "date": "2025-08-27",
+      "close": 25.24968,
+      "volume": 860380
+    },
+    {
+      "date": "2025-08-28",
+      "close": 25.26825,
+      "volume": 868299
+    },
+    {
+      "date": "2025-08-29",
+      "close": 25.282428,
+      "volume": 876218
+    },
+    {
+      "date": "2025-09-01",
+      "close": 25.292311,
+      "volume": 884137
+    },
+    {
+      "date": "2025-09-02",
+      "close": 25.298021,
+      "volume": 892056
+    },
+    {
+      "date": "2025-09-03",
+      "close": 25.299706,
+      "volume": 899975
+    },
+    {
+      "date": "2025-09-04",
+      "close": 25.297537,
+      "volume": 907894
+    },
+    {
+      "date": "2025-09-05",
+      "close": 25.291707,
+      "volume": 915813
+    },
+    {
+      "date": "2025-09-08",
+      "close": 25.282433,
+      "volume": 923732
+    },
+    {
+      "date": "2025-09-09",
+      "close": 25.26995,
+      "volume": 931651
+    },
+    {
+      "date": "2025-09-10",
+      "close": 25.254514,
+      "volume": 939570
+    },
+    {
+      "date": "2025-09-11",
+      "close": 25.236396,
+      "volume": 947489
+    },
+    {
+      "date": "2025-09-12",
+      "close": 25.215885,
+      "volume": 955408
+    },
+    {
+      "date": "2025-09-15",
+      "close": 25.193283,
+      "volume": 963327
+    },
+    {
+      "date": "2025-09-16",
+      "close": 25.168905,
+      "volume": 971246
+    },
+    {
+      "date": "2025-09-17",
+      "close": 25.143077,
+      "volume": 979165
+    },
+    {
+      "date": "2025-09-18",
+      "close": 25.116131,
+      "volume": 987084
+    },
+    {
+      "date": "2025-09-19",
+      "close": 25.088409,
+      "volume": 995003
+    },
+    {
+      "date": "2025-09-22",
+      "close": 25.060256,
+      "volume": 1002922
+    },
+    {
+      "date": "2025-09-23",
+      "close": 25.032019,
+      "volume": 1010841
+    },
+    {
+      "date": "2025-09-24",
+      "close": 25.004046,
+      "volume": 1018760
+    },
+    {
+      "date": "2025-09-25",
+      "close": 24.976684,
+      "volume": 1026679
+    },
+    {
+      "date": "2025-09-26",
+      "close": 24.950275,
+      "volume": 1034598
+    },
+    {
+      "date": "2025-09-29",
+      "close": 24.925158,
+      "volume": 1042517
+    },
+    {
+      "date": "2025-09-30",
+      "close": 24.901661,
+      "volume": 1050436
+    },
+    {
+      "date": "2025-10-01",
+      "close": 24.880105,
+      "volume": 1058355
+    },
+    {
+      "date": "2025-10-02",
+      "close": 24.860798,
+      "volume": 1066274
+    },
+    {
+      "date": "2025-10-03",
+      "close": 24.844036,
+      "volume": 1074193
+    },
+    {
+      "date": "2025-10-06",
+      "close": 24.830098,
+      "volume": 1082112
+    },
+    {
+      "date": "2025-10-07",
+      "close": 24.819249,
+      "volume": 1090031
+    },
+    {
+      "date": "2025-10-08",
+      "close": 24.811733,
+      "volume": 1097950
+    },
+    {
+      "date": "2025-10-09",
+      "close": 24.807776,
+      "volume": 1105869
+    },
+    {
+      "date": "2025-10-10",
+      "close": 24.807583,
+      "volume": 1113788
+    },
+    {
+      "date": "2025-10-13",
+      "close": 24.811335,
+      "volume": 1121707
+    },
+    {
+      "date": "2025-10-14",
+      "close": 24.819192,
+      "volume": 1129626
+    },
+    {
+      "date": "2025-10-15",
+      "close": 24.831288,
+      "volume": 1137545
+    },
+    {
+      "date": "2025-10-16",
+      "close": 24.847734,
+      "volume": 1145464
+    },
+    {
+      "date": "2025-10-17",
+      "close": 24.868611,
+      "volume": 1153383
+    },
+    {
+      "date": "2025-10-20",
+      "close": 24.89398,
+      "volume": 1161302
+    },
+    {
+      "date": "2025-10-21",
+      "close": 24.923869,
+      "volume": 1169221
+    },
+    {
+      "date": "2025-10-22",
+      "close": 24.958284,
+      "volume": 1177140
+    },
+    {
+      "date": "2025-10-23",
+      "close": 24.997202,
+      "volume": 1185059
+    },
+    {
+      "date": "2025-10-24",
+      "close": 25.040574,
+      "volume": 1192978
+    },
+    {
+      "date": "2025-10-27",
+      "close": 25.088325,
+      "volume": 700897
+    },
+    {
+      "date": "2025-10-28",
+      "close": 25.140354,
+      "volume": 708816
+    },
+    {
+      "date": "2025-10-29",
+      "close": 25.196533,
+      "volume": 716735
+    },
+    {
+      "date": "2025-10-30",
+      "close": 25.256711,
+      "volume": 724654
+    },
+    {
+      "date": "2025-10-31",
+      "close": 25.320714,
+      "volume": 732573
+    },
+    {
+      "date": "2025-11-03",
+      "close": 25.388345,
+      "volume": 740492
+    },
+    {
+      "date": "2025-11-04",
+      "close": 25.459384,
+      "volume": 748411
+    },
+    {
+      "date": "2025-11-05",
+      "close": 25.533592,
+      "volume": 756330
+    },
+    {
+      "date": "2025-11-06",
+      "close": 25.610711,
+      "volume": 764249
+    },
+    {
+      "date": "2025-11-07",
+      "close": 25.690468,
+      "volume": 772168
+    },
+    {
+      "date": "2025-11-10",
+      "close": 25.77257,
+      "volume": 780087
+    },
+    {
+      "date": "2025-11-11",
+      "close": 25.856713,
+      "volume": 788006
+    },
+    {
+      "date": "2025-11-12",
+      "close": 25.942582,
+      "volume": 795925
+    },
+    {
+      "date": "2025-11-13",
+      "close": 26.029848,
+      "volume": 803844
+    },
+    {
+      "date": "2025-11-14",
+      "close": 26.118177,
+      "volume": 811763
+    },
+    {
+      "date": "2025-11-17",
+      "close": 26.207229,
+      "volume": 819682
+    },
+    {
+      "date": "2025-11-18",
+      "close": 26.296656,
+      "volume": 827601
+    },
+    {
+      "date": "2025-11-19",
+      "close": 26.386112,
+      "volume": 835520
+    },
+    {
+      "date": "2025-11-20",
+      "close": 26.475248,
+      "volume": 843439
+    },
+    {
+      "date": "2025-11-21",
+      "close": 26.563718,
+      "volume": 851358
+    },
+    {
+      "date": "2025-11-24",
+      "close": 26.651181,
+      "volume": 859277
+    },
+    {
+      "date": "2025-11-25",
+      "close": 26.737299,
+      "volume": 867196
+    },
+    {
+      "date": "2025-11-26",
+      "close": 26.821746,
+      "volume": 875115
+    },
+    {
+      "date": "2025-11-27",
+      "close": 26.904201,
+      "volume": 883034
+    },
+    {
+      "date": "2025-11-28",
+      "close": 26.984359,
+      "volume": 890953
+    },
+    {
+      "date": "2025-12-01",
+      "close": 27.061928,
+      "volume": 898872
+    },
+    {
+      "date": "2025-12-02",
+      "close": 27.136628,
+      "volume": 906791
+    },
+    {
+      "date": "2025-12-03",
+      "close": 27.2082,
+      "volume": 914710
+    },
+    {
+      "date": "2025-12-04",
+      "close": 27.2764,
+      "volume": 922629
+    },
+    {
+      "date": "2025-12-05",
+      "close": 27.341008,
+      "volume": 930548
+    },
+    {
+      "date": "2025-12-08",
+      "close": 27.401822,
+      "volume": 938467
+    },
+    {
+      "date": "2025-12-09",
+      "close": 27.458663,
+      "volume": 946386
+    },
+    {
+      "date": "2025-12-10",
+      "close": 27.511376,
+      "volume": 954305
+    },
+    {
+      "date": "2025-12-11",
+      "close": 27.559831,
+      "volume": 962224
+    },
+    {
+      "date": "2025-12-12",
+      "close": 27.603922,
+      "volume": 970143
+    },
+    {
+      "date": "2025-12-15",
+      "close": 27.64357,
+      "volume": 978062
+    },
+    {
+      "date": "2025-12-16",
+      "close": 27.67872,
+      "volume": 985981
+    },
+    {
+      "date": "2025-12-17",
+      "close": 27.709347,
+      "volume": 993900
+    },
+    {
+      "date": "2025-12-18",
+      "close": 27.73545,
+      "volume": 1001819
+    },
+    {
+      "date": "2025-12-19",
+      "close": 27.757055,
+      "volume": 1009738
+    },
+    {
+      "date": "2025-12-22",
+      "close": 27.774217,
+      "volume": 1017657
+    },
+    {
+      "date": "2025-12-23",
+      "close": 27.787015,
+      "volume": 1025576
+    },
+    {
+      "date": "2025-12-24",
+      "close": 27.795554,
+      "volume": 1033495
+    },
+    {
+      "date": "2025-12-25",
+      "close": 27.799964,
+      "volume": 1041414
+    },
+    {
+      "date": "2025-12-26",
+      "close": 27.800402,
+      "volume": 1049333
+    },
+    {
+      "date": "2025-12-29",
+      "close": 27.797044,
+      "volume": 1057252
+    },
+    {
+      "date": "2025-12-30",
+      "close": 27.790093,
+      "volume": 1065171
+    },
+    {
+      "date": "2025-12-31",
+      "close": 27.77977,
+      "volume": 1073090
+    },
+    {
+      "date": "2026-01-01",
+      "close": 27.766318,
+      "volume": 1081009
+    },
+    {
+      "date": "2026-01-02",
+      "close": 27.749997,
+      "volume": 1088928
+    },
+    {
+      "date": "2026-01-05",
+      "close": 27.731084,
+      "volume": 1096847
+    },
+    {
+      "date": "2026-01-06",
+      "close": 27.709874,
+      "volume": 1104766
+    },
+    {
+      "date": "2026-01-07",
+      "close": 27.686671,
+      "volume": 1112685
+    },
+    {
+      "date": "2026-01-08",
+      "close": 27.661795,
+      "volume": 1120604
+    },
+    {
+      "date": "2026-01-09",
+      "close": 27.635574,
+      "volume": 1128523
+    },
+    {
+      "date": "2026-01-12",
+      "close": 27.608344,
+      "volume": 1136442
+    },
+    {
+      "date": "2026-01-13",
+      "close": 27.580447,
+      "volume": 1144361
+    },
+    {
+      "date": "2026-01-14",
+      "close": 27.55223,
+      "volume": 1152280
+    },
+    {
+      "date": "2026-01-15",
+      "close": 27.524039,
+      "volume": 1160199
+    },
+    {
+      "date": "2026-01-16",
+      "close": 27.496223,
+      "volume": 1168118
+    },
+    {
+      "date": "2026-01-19",
+      "close": 27.469128,
+      "volume": 1176037
+    },
+    {
+      "date": "2026-01-20",
+      "close": 27.443094,
+      "volume": 1183956
+    },
+    {
+      "date": "2026-01-21",
+      "close": 27.418458,
+      "volume": 1191875
+    },
+    {
+      "date": "2026-01-22",
+      "close": 27.395545,
+      "volume": 1199794
+    },
+    {
+      "date": "2026-01-23",
+      "close": 27.374673,
+      "volume": 707713
+    },
+    {
+      "date": "2026-01-26",
+      "close": 27.356145,
+      "volume": 715632
+    },
+    {
+      "date": "2026-01-27",
+      "close": 27.340253,
+      "volume": 723551
+    },
+    {
+      "date": "2026-01-28",
+      "close": 27.327271,
+      "volume": 731470
+    },
+    {
+      "date": "2026-01-29",
+      "close": 27.317458,
+      "volume": 739389
+    },
+    {
+      "date": "2026-01-30",
+      "close": 27.311053,
+      "volume": 747308
+    },
+    {
+      "date": "2026-02-02",
+      "close": 27.308274,
+      "volume": 755227
+    },
+    {
+      "date": "2026-02-03",
+      "close": 27.309319,
+      "volume": 763146
+    },
+    {
+      "date": "2026-02-04",
+      "close": 27.314363,
+      "volume": 771065
+    },
+    {
+      "date": "2026-02-05",
+      "close": 27.323557,
+      "volume": 778984
+    },
+    {
+      "date": "2026-02-06",
+      "close": 27.337028,
+      "volume": 786903
+    },
+    {
+      "date": "2026-02-09",
+      "close": 27.354878,
+      "volume": 794822
+    },
+    {
+      "date": "2026-02-10",
+      "close": 27.377181,
+      "volume": 802741
+    },
+    {
+      "date": "2026-02-11",
+      "close": 27.403988,
+      "volume": 810660
+    },
+    {
+      "date": "2026-02-12",
+      "close": 27.43532,
+      "volume": 818579
+    },
+    {
+      "date": "2026-02-13",
+      "close": 27.471173,
+      "volume": 826498
+    },
+    {
+      "date": "2026-02-16",
+      "close": 27.511517,
+      "volume": 834417
+    },
+    {
+      "date": "2026-02-17",
+      "close": 27.556294,
+      "volume": 842336
+    },
+    {
+      "date": "2026-02-18",
+      "close": 27.60542,
+      "volume": 850255
+    },
+    {
+      "date": "2026-02-19",
+      "close": 27.658785,
+      "volume": 858174
+    },
+    {
+      "date": "2026-02-20",
+      "close": 27.716256,
+      "volume": 866093
+    },
+    {
+      "date": "2026-02-23",
+      "close": 27.777673,
+      "volume": 874012
+    },
+    {
+      "date": "2026-02-24",
+      "close": 27.842854,
+      "volume": 881931
+    },
+    {
+      "date": "2026-02-25",
+      "close": 27.911595,
+      "volume": 889850
+    },
+    {
+      "date": "2026-02-26",
+      "close": 27.983671,
+      "volume": 897769
+    },
+    {
+      "date": "2026-02-27",
+      "close": 28.058835,
+      "volume": 905688
+    },
+    {
+      "date": "2026-03-02",
+      "close": 28.136826,
+      "volume": 913607
+    },
+    {
+      "date": "2026-03-03",
+      "close": 28.217361,
+      "volume": 921526
+    },
+    {
+      "date": "2026-03-04",
+      "close": 28.300148,
+      "volume": 929445
+    },
+    {
+      "date": "2026-03-05",
+      "close": 28.384875,
+      "volume": 937364
+    },
+    {
+      "date": "2026-03-06",
+      "close": 28.471225,
+      "volume": 945283
+    },
+    {
+      "date": "2026-03-09",
+      "close": 28.558867,
+      "volume": 953202
+    },
+    {
+      "date": "2026-03-10",
+      "close": 28.647464,
+      "volume": 961121
+    },
+    {
+      "date": "2026-03-11",
+      "close": 28.736672,
+      "volume": 969040
+    },
+    {
+      "date": "2026-03-12",
+      "close": 28.826147,
+      "volume": 976959
+    },
+    {
+      "date": "2026-03-13",
+      "close": 28.915538,
+      "volume": 984878
+    },
+    {
+      "date": "2026-03-16",
+      "close": 29.0045,
+      "volume": 992797
+    },
+    {
+      "date": "2026-03-17",
+      "close": 29.092686,
+      "volume": 1000716
+    },
+    {
+      "date": "2026-03-18",
+      "close": 29.179756,
+      "volume": 1008635
+    },
+    {
+      "date": "2026-03-19",
+      "close": 29.265377,
+      "volume": 1016554
+    },
+    {
+      "date": "2026-03-20",
+      "close": 29.349223,
+      "volume": 1024473
+    },
+    {
+      "date": "2026-03-23",
+      "close": 29.43098,
+      "volume": 1032392
+    },
+    {
+      "date": "2026-03-24",
+      "close": 29.510344,
+      "volume": 1040311
+    },
+    {
+      "date": "2026-03-25",
+      "close": 29.587028,
+      "volume": 1048230
+    },
+    {
+      "date": "2026-03-26",
+      "close": 29.660759,
+      "volume": 1056149
+    },
+    {
+      "date": "2026-03-27",
+      "close": 29.731282,
+      "volume": 1064068
+    },
+    {
+      "date": "2026-03-30",
+      "close": 29.798361,
+      "volume": 1071987
+    },
+    {
+      "date": "2026-03-31",
+      "close": 29.861781,
+      "volume": 1079906
+    },
+    {
+      "date": "2026-04-01",
+      "close": 29.921347,
+      "volume": 1087825
+    },
+    {
+      "date": "2026-04-02",
+      "close": 29.976889,
+      "volume": 1095744
+    },
+    {
+      "date": "2026-04-03",
+      "close": 30.028259,
+      "volume": 1103663
+    },
+    {
+      "date": "2026-04-06",
+      "close": 30.075334,
+      "volume": 1111582
+    },
+    {
+      "date": "2026-04-07",
+      "close": 30.118016,
+      "volume": 1119501
+    },
+    {
+      "date": "2026-04-08",
+      "close": 30.156236,
+      "volume": 1127420
+    },
+    {
+      "date": "2026-04-09",
+      "close": 30.189946,
+      "volume": 1135339
+    },
+    {
+      "date": "2026-04-10",
+      "close": 30.219131,
+      "volume": 1143258
+    },
+    {
+      "date": "2026-04-13",
+      "close": 30.243796,
+      "volume": 1151177
+    },
+    {
+      "date": "2026-04-14",
+      "close": 30.263979,
+      "volume": 1159096
+    },
+    {
+      "date": "2026-04-15",
+      "close": 30.279741,
+      "volume": 1167015
+    },
+    {
+      "date": "2026-04-16",
+      "close": 30.291169,
+      "volume": 1174934
+    },
+    {
+      "date": "2026-04-17",
+      "close": 30.298377,
+      "volume": 1182853
+    },
+    {
+      "date": "2026-04-20",
+      "close": 30.301504,
+      "volume": 1190772
+    },
+    {
+      "date": "2026-04-21",
+      "close": 30.300712,
+      "volume": 1198691
+    },
+    {
+      "date": "2026-04-22",
+      "close": 30.296187,
+      "volume": 706610
+    },
+    {
+      "date": "2026-04-23",
+      "close": 30.288136,
+      "volume": 714529
+    },
+    {
+      "date": "2026-04-24",
+      "close": 30.276789,
+      "volume": 722448
+    },
+    {
+      "date": "2026-04-27",
+      "close": 30.262394,
+      "volume": 730367
+    },
+    {
+      "date": "2026-04-28",
+      "close": 30.245216,
+      "volume": 738286
+    },
+    {
+      "date": "2026-04-29",
+      "close": 30.225539,
+      "volume": 746205
+    },
+    {
+      "date": "2026-04-30",
+      "close": 30.20366,
+      "volume": 754124
+    },
+    {
+      "date": "2026-05-01",
+      "close": 30.179889,
+      "volume": 762043
+    },
+    {
+      "date": "2026-05-04",
+      "close": 30.154549,
+      "volume": 769962
+    },
+    {
+      "date": "2026-05-05",
+      "close": 30.12797,
+      "volume": 777881
+    },
+    {
+      "date": "2026-05-06",
+      "close": 30.10049,
+      "volume": 785800
+    },
+    {
+      "date": "2026-05-07",
+      "close": 30.072453,
+      "volume": 793719
+    },
+    {
+      "date": "2026-05-08",
+      "close": 30.044206,
+      "volume": 801638
+    },
+    {
+      "date": "2026-05-11",
+      "close": 30.016097,
+      "volume": 809557
+    },
+    {
+      "date": "2026-05-12",
+      "close": 29.988473,
+      "volume": 817476
+    },
+    {
+      "date": "2026-05-13",
+      "close": 29.96168,
+      "volume": 825395
+    },
+    {
+      "date": "2026-05-14",
+      "close": 29.936055,
+      "volume": 833314
+    },
+    {
+      "date": "2026-05-15",
+      "close": 29.911933,
+      "volume": 841233
+    },
+    {
+      "date": "2026-05-18",
+      "close": 29.889636,
+      "volume": 849152
+    },
+    {
+      "date": "2026-05-19",
+      "close": 29.869478,
+      "volume": 857071
+    },
+    {
+      "date": "2026-05-20",
+      "close": 29.85176,
+      "volume": 864990
+    },
+    {
+      "date": "2026-05-21",
+      "close": 29.836766,
+      "volume": 872909
+    },
+    {
+      "date": "2026-05-22",
+      "close": 29.824767,
+      "volume": 880828
+    },
+    {
+      "date": "2026-05-25",
+      "close": 29.816014,
+      "volume": 888747
+    },
+    {
+      "date": "2026-05-26",
+      "close": 29.810741,
+      "volume": 896666
+    },
+    {
+      "date": "2026-05-27",
+      "close": 29.80916,
+      "volume": 904585
+    },
+    {
+      "date": "2026-05-28",
+      "close": 29.811461,
+      "volume": 912504
+    },
+    {
+      "date": "2026-05-29",
+      "close": 29.817812,
+      "volume": 920423
+    },
+    {
+      "date": "2026-06-01",
+      "close": 29.828357,
+      "volume": 928342
+    },
+    {
+      "date": "2026-06-02",
+      "close": 29.843213,
+      "volume": 936261
+    },
+    {
+      "date": "2026-06-03",
+      "close": 29.862475,
+      "volume": 944180
+    },
+    {
+      "date": "2026-06-04",
+      "close": 29.886208,
+      "volume": 952099
+    },
+    {
+      "date": "2026-06-05",
+      "close": 29.914456,
+      "volume": 960018
+    },
+    {
+      "date": "2026-06-08",
+      "close": 29.94723,
+      "volume": 967937
+    },
+    {
+      "date": "2026-06-09",
+      "close": 29.984518,
+      "volume": 975856
+    },
+    {
+      "date": "2026-06-10",
+      "close": 30.026282,
+      "volume": 983775
+    },
+    {
+      "date": "2026-06-11",
+      "close": 30.072455,
+      "volume": 991694
+    },
+    {
+      "date": "2026-06-12",
+      "close": 30.122944,
+      "volume": 999613
+    },
+    {
+      "date": "2026-06-15",
+      "close": 30.177634,
+      "volume": 1007532
+    },
+    {
+      "date": "2026-06-16",
+      "close": 30.23638,
+      "volume": 1015451
+    },
+    {
+      "date": "2026-06-17",
+      "close": 30.299017,
+      "volume": 1023370
+    },
+    {
+      "date": "2026-06-18",
+      "close": 30.365356,
+      "volume": 1031289
+    },
+    {
+      "date": "2026-06-19",
+      "close": 30.435185,
+      "volume": 1039208
+    },
+    {
+      "date": "2026-06-22",
+      "close": 30.508272,
+      "volume": 1047127
+    },
+    {
+      "date": "2026-06-23",
+      "close": 30.584366,
+      "volume": 1055046
+    },
+    {
+      "date": "2026-06-24",
+      "close": 30.663198,
+      "volume": 1062965
+    },
+    {
+      "date": "2026-06-25",
+      "close": 30.744484,
+      "volume": 1070884
+    },
+    {
+      "date": "2026-06-26",
+      "close": 30.827923,
+      "volume": 1078803
+    },
+    {
+      "date": "2026-06-29",
+      "close": 30.913202,
+      "volume": 1086722
+    },
+    {
+      "date": "2026-06-30",
+      "close": 31.0,
+      "volume": 1094641
+    }
+  ]
+}

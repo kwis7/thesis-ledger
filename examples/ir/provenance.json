@@ -1,0 +1,21 @@
+{
+  "scope": "Curated date/form/accession/link excerpts only. These are not full response snapshots.",
+  "full_listing_responses": [
+    {
+      "url": "https://investors.expandenergy.com/financial-information/sec-filings?field_nir_sec_form_group_target_id=471",
+      "final_url": "https://investors.expandenergy.com/financial-information/sec-filings?field_nir_sec_form_group_target_id=471",
+      "http_status": 200,
+      "bytes": 142360,
+      "sha256": "09d6e6b1519e08f2e5eac777f863f89341bbfb5daa64d92e706751e05c2b341b",
+      "retrieved_at": "2026-10-03T04:30:23.892011+00:00"
+    },
+    {
+      "url": "https://investors.expandenergy.com/financial-information/sec-filings?field_nir_sec_form_group_target_id=496",
+      "final_url": "https://investors.expandenergy.com/financial-information/sec-filings?field_nir_sec_form_group_target_id=496",
+      "http_status": 200,
+      "bytes": 144519,
+      "sha256": "91dfbbdd9c41fed43618bcdd7d9a53d66e25b963ca5e52cf8ad77c4a22c98a2c",
+      "retrieved_at": "2026-10-03T04:30:25.708661+00:00"
+    }
+  ]
+}

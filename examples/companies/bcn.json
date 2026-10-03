@@ -1,0 +1,1353 @@
+{
+  "symbol": "BCN",
+  "name": "Beacon Cloud",
+  "sector": "Recurring software",
+  "archetype": "recurring",
+  "currency": "USD",
+  "description": "Fictional recurring revenue platform with explicit customer replacement and acquisition costs.",
+  "price": 42.0,
+  "price_as_of": "2026-06-30T20:00:00+00:00",
+  "as_of": "2026-07-01T16:00:00+00:00",
+  "financials": {
+    "currency": "USD",
+    "amount_unit": "USD millions",
+    "share_unit": "million shares",
+    "period": "LTM ending 2026-06-30",
+    "period_type": "annual",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "revenue": 360.0,
+    "operating_nwc": 7.2,
+    "customers": 0.012,
+    "customer_unit": "million customers",
+    "annual_revenue_per_customer": 30000.0,
+    "onboarding_capacity": 0.003,
+    "fixed_operating_cost": 75.0,
+    "debt": 25.0,
+    "cash": 90.0,
+    "minorities": 0.0,
+    "diluted_shares": 40.0
+  },
+  "assumptions": {
+    "retention": 0.93,
+    "new_customers": 0.0025,
+    "new_customer_growth": 0.04,
+    "onboarding_capacity_growth": 0.05,
+    "annual_revenue_per_customer_growth": 0.02,
+    "service_cost_ratio": 0.45,
+    "fixed_cost_growth": 0.03,
+    "acquisition_cost_per_customer": 14000.0,
+    "platform_capital_per_new_customer": 5000.0,
+    "maintenance_capex_ratio": 0.035,
+    "depreciation_ratio": 0.03,
+    "nwc_ratio": 0.02,
+    "tax_rate": 0.25,
+    "discount_rate": 0.105,
+    "terminal_growth": 0.025,
+    "terminal_roic": 0.25,
+    "exit_ebit_multiple": 14.0
+  },
+  "thesis": {
+    "statement": "Retained customer cohorts can produce cash growth, if replacement acquisition and platform investment stay affordable.",
+    "drivers": [
+      {
+        "id": "retention",
+        "label": "Gross customer retention",
+        "value": 0.93,
+        "unit": "annual ratio",
+        "evidence_ids": [
+          "bcn-cohort",
+          "bcn-opposition"
+        ],
+        "watch_condition": "Review if retention falls below 88% in a complete annual cohort."
+      },
+      {
+        "id": "new_customers",
+        "label": "Annual new customers",
+        "value": 0.0025,
+        "unit": "million customers",
+        "evidence_ids": [
+          "bcn-cohort"
+        ],
+        "watch_condition": "Review if additions exceed demonstrated onboarding capacity."
+      },
+      {
+        "id": "acquisition_cost_per_customer",
+        "label": "Acquisition cost per customer",
+        "value": 14000.0,
+        "unit": "USD/customer",
+        "evidence_ids": [
+          "bcn-capital"
+        ],
+        "watch_condition": "Review if acquisition cost rises above USD 17,000."
+      }
+    ],
+    "falsifiers": [
+      "Customer losses consume the entire acquisition capacity.",
+      "Higher contract revenue does not convert after acquisition and platform investment."
+    ],
+    "counterevidence": [
+      "Migration credits can lower retention.",
+      "Increasing acquisition can strain onboarding and require more capital."
+    ],
+    "next_review": "2026-08-20"
+  },
+  "evidence": [
+    {
+      "id": "bcn-cohort",
+      "title": "Customer bridge, synthetic annual period",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://bcn/cohort",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "retrieved_at": "2026-07-01T13:00:00+00:00",
+      "usable_at": "2026-07-01T14:00:00+00:00",
+      "period": "LTM ending 2026-06-30",
+      "period_type": "annual",
+      "unit": "million customers; USD/customer/year; ratio",
+      "currency": "USD",
+      "locator": "Synthetic demonstration, operating bridge table",
+      "content": "12,000 active customers pay USD 30,000 annually on average. Gross customer retention is 93%. Annual onboarding capacity is 3,000 customers.",
+      "classification": "confirmed_fact",
+      "verified": true
+    },
+    {
+      "id": "bcn-capital",
+      "title": "Customer acquisition and claims, synthetic annual period",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://bcn/capital",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "retrieved_at": "2026-07-01T13:00:00+00:00",
+      "usable_at": "2026-07-01T14:00:00+00:00",
+      "period": "LTM ending 2026-06-30",
+      "period_type": "annual",
+      "unit": "USD/customer; USD millions; million shares",
+      "currency": "USD",
+      "locator": "Synthetic demonstration, operating bridge table",
+      "content": "A new customer requires USD 14,000 expensed acquisition cost and USD 5,000 platform capital. Debt is 25, available cash 90, minority claims zero, and diluted shares 40, all in millions.",
+      "classification": "confirmed_fact",
+      "verified": true
+    },
+    {
+      "id": "bcn-opposition",
+      "title": "Retention challenge, synthetic observation",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://bcn/opposition",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "retrieved_at": "2026-07-01T13:00:00+00:00",
+      "usable_at": "2026-07-01T14:00:00+00:00",
+      "period": "LTM ending 2026-06-30",
+      "period_type": "annual",
+      "unit": "qualitative",
+      "currency": "USD",
+      "locator": "Synthetic demonstration, operating bridge table",
+      "content": "A synthetic competitor offers migration credits. Retention and new-customer assumptions must be tested together.",
+      "classification": "confirmed_fact",
+      "verified": true
+    }
+  ],
+  "prices": [
+    {
+      "date": "2025-07-30",
+      "close": 32.593122,
+      "volume": 711000
+    },
+    {
+      "date": "2025-07-31",
+      "close": 32.666474,
+      "volume": 718919
+    },
+    {
+      "date": "2025-08-01",
+      "close": 32.734278,
+      "volume": 726838
+    },
+    {
+      "date": "2025-08-04",
+      "close": 32.796376,
+      "volume": 734757
+    },
+    {
+      "date": "2025-08-05",
+      "close": 32.852639,
+      "volume": 742676
+    },
+    {
+      "date": "2025-08-06",
+      "close": 32.902975,
+      "volume": 750595
+    },
+    {
+      "date": "2025-08-07",
+      "close": 32.947326,
+      "volume": 758514
+    },
+    {
+      "date": "2025-08-08",
+      "close": 32.985671,
+      "volume": 766433
+    },
+    {
+      "date": "2025-08-11",
+      "close": 33.018023,
+      "volume": 774352
+    },
+    {
+      "date": "2025-08-12",
+      "close": 33.044431,
+      "volume": 782271
+    },
+    {
+      "date": "2025-08-13",
+      "close": 33.064979,
+      "volume": 790190
+    },
+    {
+      "date": "2025-08-14",
+      "close": 33.079785,
+      "volume": 798109
+    },
+    {
+      "date": "2025-08-15",
+      "close": 33.089003,
+      "volume": 806028
+    },
+    {
+      "date": "2025-08-18",
+      "close": 33.092819,
+      "volume": 813947
+    },
+    {
+      "date": "2025-08-19",
+      "close": 33.091449,
+      "volume": 821866
+    },
+    {
+      "date": "2025-08-20",
+      "close": 33.085143,
+      "volume": 829785
+    },
+    {
+      "date": "2025-08-21",
+      "close": 33.074177,
+      "volume": 837704
+    },
+    {
+      "date": "2025-08-22",
+      "close": 33.058857,
+      "volume": 845623
+    },
+    {
+      "date": "2025-08-25",
+      "close": 33.039515,
+      "volume": 853542
+    },
+    {
+      "date": "2025-08-26",
+      "close": 33.016503,
+      "volume": 861461
+    },
+    {
+      "date": "2025-08-27",
+      "close": 32.9902,
+      "volume": 869380
+    },
+    {
+      "date": "2025-08-28",
+      "close": 32.961001,
+      "volume": 877299
+    },
+    {
+      "date": "2025-08-29",
+      "close": 32.929318,
+      "volume": 885218
+    },
+    {
+      "date": "2025-09-01",
+      "close": 32.895579,
+      "volume": 893137
+    },
+    {
+      "date": "2025-09-02",
+      "close": 32.860225,
+      "volume": 901056
+    },
+    {
+      "date": "2025-09-03",
+      "close": 32.823704,
+      "volume": 908975
+    },
+    {
+      "date": "2025-09-04",
+      "close": 32.786473,
+      "volume": 916894
+    },
+    {
+      "date": "2025-09-05",
+      "close": 32.748992,
+      "volume": 924813
+    },
+    {
+      "date": "2025-09-08",
+      "close": 32.711723,
+      "volume": 932732
+    },
+    {
+      "date": "2025-09-09",
+      "close": 32.675127,
+      "volume": 940651
+    },
+    {
+      "date": "2025-09-10",
+      "close": 32.639661,
+      "volume": 948570
+    },
+    {
+      "date": "2025-09-11",
+      "close": 32.605774,
+      "volume": 956489
+    },
+    {
+      "date": "2025-09-12",
+      "close": 32.573908,
+      "volume": 964408
+    },
+    {
+      "date": "2025-09-15",
+      "close": 32.54449,
+      "volume": 972327
+    },
+    {
+      "date": "2025-09-16",
+      "close": 32.517936,
+      "volume": 980246
+    },
+    {
+      "date": "2025-09-17",
+      "close": 32.494642,
+      "volume": 988165
+    },
+    {
+      "date": "2025-09-18",
+      "close": 32.474987,
+      "volume": 996084
+    },
+    {
+      "date": "2025-09-19",
+      "close": 32.459328,
+      "volume": 1004003
+    },
+    {
+      "date": "2025-09-22",
+      "close": 32.447996,
+      "volume": 1011922
+    },
+    {
+      "date": "2025-09-23",
+      "close": 32.441299,
+      "volume": 1019841
+    },
+    {
+      "date": "2025-09-24",
+      "close": 32.439518,
+      "volume": 1027760
+    },
+    {
+      "date": "2025-09-25",
+      "close": 32.442903,
+      "volume": 1035679
+    },
+    {
+      "date": "2025-09-26",
+      "close": 32.451674,
+      "volume": 1043598
+    },
+    {
+      "date": "2025-09-29",
+      "close": 32.466019,
+      "volume": 1051517
+    },
+    {
+      "date": "2025-09-30",
+      "close": 32.486095,
+      "volume": 1059436
+    },
+    {
+      "date": "2025-10-01",
+      "close": 32.512022,
+      "volume": 1067355
+    },
+    {
+      "date": "2025-10-02",
+      "close": 32.543888,
+      "volume": 1075274
+    },
+    {
+      "date": "2025-10-03",
+      "close": 32.581744,
+      "volume": 1083193
+    },
+    {
+      "date": "2025-10-06",
+      "close": 32.625606,
+      "volume": 1091112
+    },
+    {
+      "date": "2025-10-07",
+      "close": 32.675457,
+      "volume": 1099031
+    },
+    {
+      "date": "2025-10-08",
+      "close": 32.73124,
+      "volume": 1106950
+    },
+    {
+      "date": "2025-10-09",
+      "close": 32.792867,
+      "volume": 1114869
+    },
+    {
+      "date": "2025-10-10",
+      "close": 32.860213,
+      "volume": 1122788
+    },
+    {
+      "date": "2025-10-13",
+      "close": 32.93312,
+      "volume": 1130707
+    },
+    {
+      "date": "2025-10-14",
+      "close": 33.011397,
+      "volume": 1138626
+    },
+    {
+      "date": "2025-10-15",
+      "close": 33.094822,
+      "volume": 1146545
+    },
+    {
+      "date": "2025-10-16",
+      "close": 33.183141,
+      "volume": 1154464
+    },
+    {
+      "date": "2025-10-17",
+      "close": 33.276072,
+      "volume": 1162383
+    },
+    {
+      "date": "2025-10-20",
+      "close": 33.373307,
+      "volume": 1170302
+    },
+    {
+      "date": "2025-10-21",
+      "close": 33.47451,
+      "volume": 1178221
+    },
+    {
+      "date": "2025-10-22",
+      "close": 33.579322,
+      "volume": 1186140
+    },
+    {
+      "date": "2025-10-23",
+      "close": 33.687365,
+      "volume": 1194059
+    },
+    {
+      "date": "2025-10-24",
+      "close": 33.798239,
+      "volume": 701978
+    },
+    {
+      "date": "2025-10-27",
+      "close": 33.91153,
+      "volume": 709897
+    },
+    {
+      "date": "2025-10-28",
+      "close": 34.026807,
+      "volume": 717816
+    },
+    {
+      "date": "2025-10-29",
+      "close": 34.143629,
+      "volume": 725735
+    },
+    {
+      "date": "2025-10-30",
+      "close": 34.261545,
+      "volume": 733654
+    },
+    {
+      "date": "2025-10-31",
+      "close": 34.380098,
+      "volume": 741573
+    },
+    {
+      "date": "2025-11-03",
+      "close": 34.498827,
+      "volume": 749492
+    },
+    {
+      "date": "2025-11-04",
+      "close": 34.617271,
+      "volume": 757411
+    },
+    {
+      "date": "2025-11-05",
+      "close": 34.734968,
+      "volume": 765330
+    },
+    {
+      "date": "2025-11-06",
+      "close": 34.851464,
+      "volume": 773249
+    },
+    {
+      "date": "2025-11-07",
+      "close": 34.966309,
+      "volume": 781168
+    },
+    {
+      "date": "2025-11-10",
+      "close": 35.079065,
+      "volume": 789087
+    },
+    {
+      "date": "2025-11-11",
+      "close": 35.189305,
+      "volume": 797006
+    },
+    {
+      "date": "2025-11-12",
+      "close": 35.296617,
+      "volume": 804925
+    },
+    {
+      "date": "2025-11-13",
+      "close": 35.400607,
+      "volume": 812844
+    },
+    {
+      "date": "2025-11-14",
+      "close": 35.5009,
+      "volume": 820763
+    },
+    {
+      "date": "2025-11-17",
+      "close": 35.597144,
+      "volume": 828682
+    },
+    {
+      "date": "2025-11-18",
+      "close": 35.689008,
+      "volume": 836601
+    },
+    {
+      "date": "2025-11-19",
+      "close": 35.776191,
+      "volume": 844520
+    },
+    {
+      "date": "2025-11-20",
+      "close": 35.858416,
+      "volume": 852439
+    },
+    {
+      "date": "2025-11-21",
+      "close": 35.935439,
+      "volume": 860358
+    },
+    {
+      "date": "2025-11-24",
+      "close": 36.007043,
+      "volume": 868277
+    },
+    {
+      "date": "2025-11-25",
+      "close": 36.073045,
+      "volume": 876196
+    },
+    {
+      "date": "2025-11-26",
+      "close": 36.133296,
+      "volume": 884115
+    },
+    {
+      "date": "2025-11-27",
+      "close": 36.187679,
+      "volume": 892034
+    },
+    {
+      "date": "2025-11-28",
+      "close": 36.236113,
+      "volume": 899953
+    },
+    {
+      "date": "2025-12-01",
+      "close": 36.278552,
+      "volume": 907872
+    },
+    {
+      "date": "2025-12-02",
+      "close": 36.314984,
+      "volume": 915791
+    },
+    {
+      "date": "2025-12-03",
+      "close": 36.345435,
+      "volume": 923710
+    },
+    {
+      "date": "2025-12-04",
+      "close": 36.369965,
+      "volume": 931629
+    },
+    {
+      "date": "2025-12-05",
+      "close": 36.38867,
+      "volume": 939548
+    },
+    {
+      "date": "2025-12-08",
+      "close": 36.401678,
+      "volume": 947467
+    },
+    {
+      "date": "2025-12-09",
+      "close": 36.409153,
+      "volume": 955386
+    },
+    {
+      "date": "2025-12-10",
+      "close": 36.411291,
+      "volume": 963305
+    },
+    {
+      "date": "2025-12-11",
+      "close": 36.40832,
+      "volume": 971224
+    },
+    {
+      "date": "2025-12-12",
+      "close": 36.400498,
+      "volume": 979143
+    },
+    {
+      "date": "2025-12-15",
+      "close": 36.388111,
+      "volume": 987062
+    },
+    {
+      "date": "2025-12-16",
+      "close": 36.371472,
+      "volume": 994981
+    },
+    {
+      "date": "2025-12-17",
+      "close": 36.350921,
+      "volume": 1002900
+    },
+    {
+      "date": "2025-12-18",
+      "close": 36.326819,
+      "volume": 1010819
+    },
+    {
+      "date": "2025-12-19",
+      "close": 36.299549,
+      "volume": 1018738
+    },
+    {
+      "date": "2025-12-22",
+      "close": 36.269513,
+      "volume": 1026657
+    },
+    {
+      "date": "2025-12-23",
+      "close": 36.237128,
+      "volume": 1034576
+    },
+    {
+      "date": "2025-12-24",
+      "close": 36.202827,
+      "volume": 1042495
+    },
+    {
+      "date": "2025-12-25",
+      "close": 36.167051,
+      "volume": 1050414
+    },
+    {
+      "date": "2025-12-26",
+      "close": 36.130254,
+      "volume": 1058333
+    },
+    {
+      "date": "2025-12-29",
+      "close": 36.092894,
+      "volume": 1066252
+    },
+    {
+      "date": "2025-12-30",
+      "close": 36.05543,
+      "volume": 1074171
+    },
+    {
+      "date": "2025-12-31",
+      "close": 36.018326,
+      "volume": 1082090
+    },
+    {
+      "date": "2026-01-01",
+      "close": 35.982041,
+      "volume": 1090009
+    },
+    {
+      "date": "2026-01-02",
+      "close": 35.947029,
+      "volume": 1097928
+    },
+    {
+      "date": "2026-01-05",
+      "close": 35.913739,
+      "volume": 1105847
+    },
+    {
+      "date": "2026-01-06",
+      "close": 35.882607,
+      "volume": 1113766
+    },
+    {
+      "date": "2026-01-07",
+      "close": 35.854057,
+      "volume": 1121685
+    },
+    {
+      "date": "2026-01-08",
+      "close": 35.8285,
+      "volume": 1129604
+    },
+    {
+      "date": "2026-01-09",
+      "close": 35.806325,
+      "volume": 1137523
+    },
+    {
+      "date": "2026-01-12",
+      "close": 35.787905,
+      "volume": 1145442
+    },
+    {
+      "date": "2026-01-13",
+      "close": 35.773589,
+      "volume": 1153361
+    },
+    {
+      "date": "2026-01-14",
+      "close": 35.763702,
+      "volume": 1161280
+    },
+    {
+      "date": "2026-01-15",
+      "close": 35.758543,
+      "volume": 1169199
+    },
+    {
+      "date": "2026-01-16",
+      "close": 35.758381,
+      "volume": 1177118
+    },
+    {
+      "date": "2026-01-19",
+      "close": 35.76346,
+      "volume": 1185037
+    },
+    {
+      "date": "2026-01-20",
+      "close": 35.773988,
+      "volume": 1192956
+    },
+    {
+      "date": "2026-01-21",
+      "close": 35.790144,
+      "volume": 700875
+    },
+    {
+      "date": "2026-01-22",
+      "close": 35.812072,
+      "volume": 708794
+    },
+    {
+      "date": "2026-01-23",
+      "close": 35.839883,
+      "volume": 716713
+    },
+    {
+      "date": "2026-01-26",
+      "close": 35.873654,
+      "volume": 724632
+    },
+    {
+      "date": "2026-01-27",
+      "close": 35.913423,
+      "volume": 732551
+    },
+    {
+      "date": "2026-01-28",
+      "close": 35.959197,
+      "volume": 740470
+    },
+    {
+      "date": "2026-01-29",
+      "close": 36.010945,
+      "volume": 748389
+    },
+    {
+      "date": "2026-01-30",
+      "close": 36.068602,
+      "volume": 756308
+    },
+    {
+      "date": "2026-02-02",
+      "close": 36.132066,
+      "volume": 764227
+    },
+    {
+      "date": "2026-02-03",
+      "close": 36.201202,
+      "volume": 772146
+    },
+    {
+      "date": "2026-02-04",
+      "close": 36.275842,
+      "volume": 780065
+    },
+    {
+      "date": "2026-02-05",
+      "close": 36.355785,
+      "volume": 787984
+    },
+    {
+      "date": "2026-02-06",
+      "close": 36.440798,
+      "volume": 795903
+    },
+    {
+      "date": "2026-02-09",
+      "close": 36.530619,
+      "volume": 803822
+    },
+    {
+      "date": "2026-02-10",
+      "close": 36.624956,
+      "volume": 811741
+    },
+    {
+      "date": "2026-02-11",
+      "close": 36.723492,
+      "volume": 819660
+    },
+    {
+      "date": "2026-02-12",
+      "close": 36.825885,
+      "volume": 827579
+    },
+    {
+      "date": "2026-02-13",
+      "close": 36.931769,
+      "volume": 835498
+    },
+    {
+      "date": "2026-02-16",
+      "close": 37.040758,
+      "volume": 843417
+    },
+    {
+      "date": "2026-02-17",
+      "close": 37.152448,
+      "volume": 851336
+    },
+    {
+      "date": "2026-02-18",
+      "close": 37.266419,
+      "volume": 859255
+    },
+    {
+      "date": "2026-02-19",
+      "close": 37.382236,
+      "volume": 867174
+    },
+    {
+      "date": "2026-02-20",
+      "close": 37.499456,
+      "volume": 875093
+    },
+    {
+      "date": "2026-02-23",
+      "close": 37.617624,
+      "volume": 883012
+    },
+    {
+      "date": "2026-02-24",
+      "close": 37.736284,
+      "volume": 890931
+    },
+    {
+      "date": "2026-02-25",
+      "close": 37.854972,
+      "volume": 898850
+    },
+    {
+      "date": "2026-02-26",
+      "close": 37.973228,
+      "volume": 906769
+    },
+    {
+      "date": "2026-02-27",
+      "close": 38.090592,
+      "volume": 914688
+    },
+    {
+      "date": "2026-03-02",
+      "close": 38.20661,
+      "volume": 922607
+    },
+    {
+      "date": "2026-03-03",
+      "close": 38.320837,
+      "volume": 930526
+    },
+    {
+      "date": "2026-03-04",
+      "close": 38.432837,
+      "volume": 938445
+    },
+    {
+      "date": "2026-03-05",
+      "close": 38.542188,
+      "volume": 946364
+    },
+    {
+      "date": "2026-03-06",
+      "close": 38.648483,
+      "volume": 954283
+    },
+    {
+      "date": "2026-03-09",
+      "close": 38.751335,
+      "volume": 962202
+    },
+    {
+      "date": "2026-03-10",
+      "close": 38.850375,
+      "volume": 970121
+    },
+    {
+      "date": "2026-03-11",
+      "close": 38.945258,
+      "volume": 978040
+    },
+    {
+      "date": "2026-03-12",
+      "close": 39.035663,
+      "volume": 985959
+    },
+    {
+      "date": "2026-03-13",
+      "close": 39.121295,
+      "volume": 993878
+    },
+    {
+      "date": "2026-03-16",
+      "close": 39.201888,
+      "volume": 1001797
+    },
+    {
+      "date": "2026-03-17",
+      "close": 39.277206,
+      "volume": 1009716
+    },
+    {
+      "date": "2026-03-18",
+      "close": 39.347044,
+      "volume": 1017635
+    },
+    {
+      "date": "2026-03-19",
+      "close": 39.411228,
+      "volume": 1025554
+    },
+    {
+      "date": "2026-03-20",
+      "close": 39.469621,
+      "volume": 1033473
+    },
+    {
+      "date": "2026-03-23",
+      "close": 39.522115,
+      "volume": 1041392
+    },
+    {
+      "date": "2026-03-24",
+      "close": 39.568643,
+      "volume": 1049311
+    },
+    {
+      "date": "2026-03-25",
+      "close": 39.609167,
+      "volume": 1057230
+    },
+    {
+      "date": "2026-03-26",
+      "close": 39.64369,
+      "volume": 1065149
+    },
+    {
+      "date": "2026-03-27",
+      "close": 39.672246,
+      "volume": 1073068
+    },
+    {
+      "date": "2026-03-30",
+      "close": 39.694908,
+      "volume": 1080987
+    },
+    {
+      "date": "2026-03-31",
+      "close": 39.711782,
+      "volume": 1088906
+    },
+    {
+      "date": "2026-04-01",
+      "close": 39.723008,
+      "volume": 1096825
+    },
+    {
+      "date": "2026-04-02",
+      "close": 39.72876,
+      "volume": 1104744
+    },
+    {
+      "date": "2026-04-03",
+      "close": 39.729244,
+      "volume": 1112663
+    },
+    {
+      "date": "2026-04-06",
+      "close": 39.724699,
+      "volume": 1120582
+    },
+    {
+      "date": "2026-04-07",
+      "close": 39.71539,
+      "volume": 1128501
+    },
+    {
+      "date": "2026-04-08",
+      "close": 39.701613,
+      "volume": 1136420
+    },
+    {
+      "date": "2026-04-09",
+      "close": 39.68369,
+      "volume": 1144339
+    },
+    {
+      "date": "2026-04-10",
+      "close": 39.661967,
+      "volume": 1152258
+    },
+    {
+      "date": "2026-04-13",
+      "close": 39.636814,
+      "volume": 1160177
+    },
+    {
+      "date": "2026-04-14",
+      "close": 39.608618,
+      "volume": 1168096
+    },
+    {
+      "date": "2026-04-15",
+      "close": 39.577787,
+      "volume": 1176015
+    },
+    {
+      "date": "2026-04-16",
+      "close": 39.544744,
+      "volume": 1183934
+    },
+    {
+      "date": "2026-04-17",
+      "close": 39.509925,
+      "volume": 1191853
+    },
+    {
+      "date": "2026-04-20",
+      "close": 39.473774,
+      "volume": 1199772
+    },
+    {
+      "date": "2026-04-21",
+      "close": 39.436748,
+      "volume": 707691
+    },
+    {
+      "date": "2026-04-22",
+      "close": 39.399304,
+      "volume": 715610
+    },
+    {
+      "date": "2026-04-23",
+      "close": 39.361905,
+      "volume": 723529
+    },
+    {
+      "date": "2026-04-24",
+      "close": 39.325012,
+      "volume": 731448
+    },
+    {
+      "date": "2026-04-27",
+      "close": 39.289083,
+      "volume": 739367
+    },
+    {
+      "date": "2026-04-28",
+      "close": 39.254572,
+      "volume": 747286
+    },
+    {
+      "date": "2026-04-29",
+      "close": 39.221922,
+      "volume": 755205
+    },
+    {
+      "date": "2026-04-30",
+      "close": 39.191568,
+      "volume": 763124
+    },
+    {
+      "date": "2026-05-01",
+      "close": 39.163928,
+      "volume": 771043
+    },
+    {
+      "date": "2026-05-04",
+      "close": 39.139407,
+      "volume": 778962
+    },
+    {
+      "date": "2026-05-05",
+      "close": 39.118389,
+      "volume": 786881
+    },
+    {
+      "date": "2026-05-06",
+      "close": 39.10124,
+      "volume": 794800
+    },
+    {
+      "date": "2026-05-07",
+      "close": 39.088301,
+      "volume": 802719
+    },
+    {
+      "date": "2026-05-08",
+      "close": 39.079889,
+      "volume": 810638
+    },
+    {
+      "date": "2026-05-11",
+      "close": 39.076294,
+      "volume": 818557
+    },
+    {
+      "date": "2026-05-12",
+      "close": 39.077777,
+      "volume": 826476
+    },
+    {
+      "date": "2026-05-13",
+      "close": 39.08457,
+      "volume": 834395
+    },
+    {
+      "date": "2026-05-14",
+      "close": 39.096873,
+      "volume": 842314
+    },
+    {
+      "date": "2026-05-15",
+      "close": 39.114854,
+      "volume": 850233
+    },
+    {
+      "date": "2026-05-18",
+      "close": 39.138646,
+      "volume": 858152
+    },
+    {
+      "date": "2026-05-19",
+      "close": 39.16835,
+      "volume": 866071
+    },
+    {
+      "date": "2026-05-20",
+      "close": 39.204029,
+      "volume": 873990
+    },
+    {
+      "date": "2026-05-21",
+      "close": 39.245712,
+      "volume": 881909
+    },
+    {
+      "date": "2026-05-22",
+      "close": 39.293395,
+      "volume": 889828
+    },
+    {
+      "date": "2026-05-25",
+      "close": 39.347034,
+      "volume": 897747
+    },
+    {
+      "date": "2026-05-26",
+      "close": 39.406553,
+      "volume": 905666
+    },
+    {
+      "date": "2026-05-27",
+      "close": 39.471841,
+      "volume": 913585
+    },
+    {
+      "date": "2026-05-28",
+      "close": 39.54275,
+      "volume": 921504
+    },
+    {
+      "date": "2026-05-29",
+      "close": 39.619103,
+      "volume": 929423
+    },
+    {
+      "date": "2026-06-01",
+      "close": 39.700688,
+      "volume": 937342
+    },
+    {
+      "date": "2026-06-02",
+      "close": 39.787263,
+      "volume": 945261
+    },
+    {
+      "date": "2026-06-03",
+      "close": 39.878555,
+      "volume": 953180
+    },
+    {
+      "date": "2026-06-04",
+      "close": 39.974266,
+      "volume": 961099
+    },
+    {
+      "date": "2026-06-05",
+      "close": 40.074069,
+      "volume": 969018
+    },
+    {
+      "date": "2026-06-08",
+      "close": 40.177615,
+      "volume": 976937
+    },
+    {
+      "date": "2026-06-09",
+      "close": 40.284531,
+      "volume": 984856
+    },
+    {
+      "date": "2026-06-10",
+      "close": 40.394425,
+      "volume": 992775
+    },
+    {
+      "date": "2026-06-11",
+      "close": 40.506888,
+      "volume": 1000694
+    },
+    {
+      "date": "2026-06-12",
+      "close": 40.621495,
+      "volume": 1008613
+    },
+    {
+      "date": "2026-06-15",
+      "close": 40.737807,
+      "volume": 1016532
+    },
+    {
+      "date": "2026-06-16",
+      "close": 40.855379,
+      "volume": 1024451
+    },
+    {
+      "date": "2026-06-17",
+      "close": 40.973754,
+      "volume": 1032370
+    },
+    {
+      "date": "2026-06-18",
+      "close": 41.092473,
+      "volume": 1040289
+    },
+    {
+      "date": "2026-06-19",
+      "close": 41.211073,
+      "volume": 1048208
+    },
+    {
+      "date": "2026-06-22",
+      "close": 41.329095,
+      "volume": 1056127
+    },
+    {
+      "date": "2026-06-23",
+      "close": 41.446079,
+      "volume": 1064046
+    },
+    {
+      "date": "2026-06-24",
+      "close": 41.561574,
+      "volume": 1071965
+    },
+    {
+      "date": "2026-06-25",
+      "close": 41.675138,
+      "volume": 1079884
+    },
+    {
+      "date": "2026-06-26",
+      "close": 41.786339,
+      "volume": 1087803
+    },
+    {
+      "date": "2026-06-29",
+      "close": 41.89476,
+      "volume": 1095722
+    },
+    {
+      "date": "2026-06-30",
+      "close": 42.0,
+      "volume": 1103641
+    }
+  ]
+}

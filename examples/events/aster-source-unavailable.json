@@ -1,0 +1,15 @@
+{
+  "id": "aster-source-unavailable",
+  "symbol": "ASTER",
+  "kind": "source_failure",
+  "title": "An expected evidence source is unavailable",
+  "summary": "The synthetic source outage preserves the last dated model and visibly degrades monitoring coverage. No fresh-data claim is made.",
+  "source": "Synthetic source-health exercise",
+  "source_document": "aster-source-health",
+  "published_at": "2026-07-17T14:00:00+00:00",
+  "decision_ts": "2026-07-17T16:00:00+00:00",
+  "verified": true,
+  "evidence_ids": [],
+  "changes": [],
+  "evidence": []
+}

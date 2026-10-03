@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101927">
+  <meta name="description" content="ThesisLedger is your local research workbench for company theses, scenario valuation, and evidence-linked review.">
+  <title>ThesisLedger | Research workbench</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101927'/%3E%3Cpath d='M17 18h30M32 18v29M19 47h26' stroke='%2335c5b4' stroke-width='6' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#today" aria-label="ThesisLedger home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 8h20M16 8v18M8 26h16"/></svg></span>
+        <span>Thesis<span class="brand-light">Ledger</span><small>LOCAL RESEARCH</small></span>
+      </a>
+      <div class="workspace-label"><span class="tiny-dot"></span><span id="sidebar-workspace">Personal workspace</span><span class="local-pill">LOCAL</span></div>
+      <div class="nav-heading">WORKBENCH</div>
+      <nav id="navigation">
+        <a href="#today" data-page="today"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Today</span></a>
+        <a href="#research" data-page="research"><svg viewBox="0 0 24 24"><path d="M4 21V8h7v13M11 21V3h9v18M2 21h20M7 11v2m0 3v2m8-12v2m3-2v2m-3 3v2m3-2v2m-3 3v2m3-2v2"/></svg><span>Company Research</span></a>
+        <a href="#lab" data-page="lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6m-5 0v6l-6 10a1.3 1.3 0 0 0 1 2h14a1.3 1.3 0 0 0 1-2L14 9V3M7 15h10M10 18h.1M14 17h.1"/></svg><span>Research Lab</span></a>
+        <a href="#monitor" data-page="monitor"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span>Monitor &amp; Timeline</span></a>
+        <a href="#alerts" data-page="alerts"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Alerts</span><span class="nav-count" id="alert-count" hidden>0</span></a>
+        <a href="#library" data-page="library"><svg viewBox="0 0 24 24"><path d="M4 3h6v18H4zM14 3l6-1 3 18-6 1zM6 7h2M6 17h2M16 6l3-.5M18 16l3-.5"/></svg><span>Research Library</span></a>
+        <a href="#workspace" data-page="workspace"><svg viewBox="0 0 24 24"><path d="m9 3-1 3-3 1-2 4 2 2v4l4 2 3-1 3 1 4-2v-4l2-2-2-4-3-1-1-3z"/><circle cx="12" cy="12" r="3"/></svg><span>My Workspace</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button type="button" class="sidebar-cta" data-action="onboarding">How the research loop works <span aria-hidden="true">↗</span></button>
+        <div class="sidebar-status"><span class="status-dot"></span><div>Local research workspace<small id="sidebar-mode">Synthetic replay, no live feeds</small></div></div>
+        <span class="sidebar-version">THESISLEDGER <span>LOCAL WORKBENCH</span></span>
+      </div>
+    </aside>
+    <div class="sidebar-scrim" id="sidebar-scrim" hidden></div>
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left"><button type="button" class="icon-button mobile-menu" id="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><span class="breadcrumb">Workbench <span>/</span> <strong id="page-label">Today</strong></span></div>
+        <div class="topbar-right"><span class="demo-badge" id="mode-badge"><span></span>Synthetic replay</span><button type="button" class="icon-button refresh-button" data-action="refresh" aria-label="Refresh saved workspace" title="Refresh saved workspace"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-2l2 2M4 17l2 2a7 7 0 0 0 12-2"/></svg></button><button type="button" class="avatar" data-action="navigate" data-page="workspace" aria-label="Open my workspace">TL</button></div>
+      </header>
+      <div id="connection-banner" class="connection-banner" role="status" hidden></div>
+      <main id="main" tabindex="-1" aria-busy="true">
+        <div class="loading-shell"><span class="loading-orbit" aria-hidden="true"></span><h1>Opening your research desk</h1><p>Loading the saved workspace and its evidence.</p></div>
+      </main>
+    </div>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><span class="eyebrow" id="dialog-eyebrow">RESEARCH DETAIL</span><h2 id="dialog-title" tabindex="-1">Details</h2></div><button type="button" class="icon-button" data-action="close-dialog" aria-label="Close dialog"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div id="dialog-content" class="dialog-content"></div></dialog>
+</body>
+</html>

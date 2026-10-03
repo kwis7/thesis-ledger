@@ -1,0 +1,41 @@
+{
+  "id": "aster-qualification-delay",
+  "symbol": "ASTER",
+  "kind": "driver_change",
+  "title": "Customer qualification is taking longer",
+  "summary": "The synthetic quarterly update lowers qualified utilization. Demand has not disappeared, but the ramp takes longer and cash conversion changes.",
+  "source": "Synthetic quarterly operating update",
+  "source_document": "aster-q2-qualification",
+  "published_at": "2026-07-15T14:00:00+00:00",
+  "decision_ts": "2026-07-15T16:00:00+00:00",
+  "verified": true,
+  "evidence_ids": [
+    "ASTER-EVENT-01"
+  ],
+  "changes": [
+    {
+      "parameter": "qualified_utilization",
+      "new": 0.66,
+      "reason": "Only customer-qualified productive capacity can become recognized shipments."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ASTER-EVENT-01",
+      "title": "Qualified utilization update",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://aster/qualification-update",
+      "published_at": "2026-07-15T14:00:00+00:00",
+      "retrieved_at": "2026-07-15T15:00:00+00:00",
+      "usable_at": "2026-07-15T15:00:00+00:00",
+      "period": "2026-Q2",
+      "unit": "ratio",
+      "currency": "USD",
+      "locator": "Operating update / qualification table",
+      "content": "Qualified utilization is 0.66 in the fictional scenario.",
+      "classification": "confirmed_fact",
+      "verified": true
+    }
+  ]
+}

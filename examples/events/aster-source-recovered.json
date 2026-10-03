@@ -1,0 +1,15 @@
+{
+  "id": "aster-source-recovered",
+  "symbol": "ASTER",
+  "kind": "source_recovered",
+  "title": "Evidence coverage has recovered",
+  "summary": "The source-health exercise is resolved. The existing financial assumptions remain unchanged until supported new company evidence arrives.",
+  "source": "Synthetic source-health exercise",
+  "source_document": "aster-source-recovery",
+  "published_at": "2026-07-18T14:00:00+00:00",
+  "decision_ts": "2026-07-18T16:00:00+00:00",
+  "verified": true,
+  "evidence_ids": [],
+  "changes": [],
+  "evidence": []
+}

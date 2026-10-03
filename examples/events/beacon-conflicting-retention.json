@@ -1,0 +1,35 @@
+{
+  "id": "beacon-conflicting-retention",
+  "symbol": "BCN",
+  "kind": "ambiguous_evidence",
+  "title": "Two retention reports need reconciliation",
+  "summary": "A synthetic customer survey and a company update use different retention definitions. No numerical assumption should change until the definitions reconcile.",
+  "source": "Synthetic conflicting-source exercise",
+  "source_document": "beacon-retention-conflict",
+  "published_at": "2026-07-16T14:00:00+00:00",
+  "decision_ts": "2026-07-16T16:00:00+00:00",
+  "verified": false,
+  "evidence_ids": [
+    "BCN-EVENT-01"
+  ],
+  "changes": [],
+  "evidence": [
+    {
+      "id": "BCN-EVENT-01",
+      "title": "Retention definitions conflict",
+      "source": "Synthetic fixture",
+      "source_type": "synthetic",
+      "url": "fixture://beacon/retention-conflict",
+      "published_at": "2026-07-16T14:00:00+00:00",
+      "retrieved_at": "2026-07-16T15:00:00+00:00",
+      "usable_at": "2026-07-16T15:00:00+00:00",
+      "period": "2026-Q2",
+      "unit": "ratio",
+      "currency": "USD",
+      "locator": "Synthetic reconciliation exercise",
+      "content": "Gross logo retention and net dollar retention are not equivalent.",
+      "classification": "data_gap",
+      "verified": false
+    }
+  ]
+}

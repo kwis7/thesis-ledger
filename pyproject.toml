@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thesisledger"
+version = "0.2.2"
+description = "Build your own evidence-driven investment agent and research workbench"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+thesisledger = "thesisledger.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+thesisledger = ["static/*.html", "static/*.css", "static/*.js", "data/*.json"]
