@@ -1,118 +1,177 @@
 # ThesisLedger
 
-### Build your own investment research agent
+### Build your own investment research workbench
 
-ThesisLedger helps you understand how to research investments with an Agent and build your own research workbench. Use your knowledge of a business to frame questions and interpret its economics. Ask the Agent to organize evidence, challenge assumptions and run calculations, then revise your judgment using results you can check.
+ThesisLedger is an open-source personal investment research workbench that runs on your own machine. Put the company research you have prepared, your assumptions, and the evidence you have checked into a workspace you manage. When new disclosures appear, compare them with your earlier view and keep a record of why you changed it. Set up the research process around the questions you care about. When useful, work alongside an AI agent of your choice to find sources, check definitions, and test scenarios.
 
-The documentation and executable workbench follow that collaboration: establishing a fact, turning a view into a testable assumption, reviewing a calculation and deciding what new information changes. Working through the research process explains why the tools are designed this way and how to use them well.
+**How can you use an AI agent to help you invest?** Begin with a question you really want to answer. Tell the agent what you already know and where your uncertainty lies. Ask it to follow the business from industry change to cash flow, find supporting and opposing evidence, and test scenarios. Then trace important figures back to original sources. Your experience helps decide where to look; the evidence tests the explanation; new facts may require a different view.
 
-[中文](README.zh-CN.md) · [User guide](docs/USER_GUIDE.md) · [Research method](docs/METHODS.md) · [Verification](docs/VERIFICATION.md)
+[中文](README.zh-CN.md) · [Follow the research journey](#start-with-a-thesis) · [Run the workbench](#get-the-workbench-running) · [Bring your own data](#start-with-your-own-company) · [Agent guide](agents/START_HERE.md)
 
-![Research workbench](docs/images/research-lab.png)
+![ThesisLedger investment research workbench](docs/images/research-lab.png)
 
-*The EXE illustration uses historical SEC filings and explicitly labeled teaching assumptions. It supplies no current quote or investment target.*
+*The screenshot shows the EXE teaching case. The built-in Agent review is connected to this example workspace.*
 
-## Use your understanding to frame a specific question
+## Start with a thesis
 
-You may already have a view: “Rising natural-gas demand will make this producer more valuable.” Your knowledge of the industry, competition and business can identify the questions that matter. How much saleable production can the company add? What price can it actually realize? How much capital will growth require? Those questions direct the Agent's evidence search.
+Suppose you think rising natural-gas demand could make a producer more valuable. That is a useful starting point, but it does not yet tell you how much the company might earn or what each share might be worth. Where will the demand appear? Can the company deliver into that market? What determines its realized price? How much would it cost to increase production? Each link can change the answer.
 
-Judgment has a place in research and needs an explanation. If you think the company has a cost advantage, ask the Agent to compare costs on a consistent basis and investigate the differences. Lower costs may reflect operating efficiency, asset mix or disclosure definitions. Your business understanding helps interpret the differences; the Agent's comparison subjects your initial view to scrutiny.
+You may know the industry well enough to suspect that processing, transportation, or long-term contracts will matter more than headline demand. Give that context to the agent so it can investigate the right questions. Your experience points the research in a direction; company disclosures still need to show what capacity is available, how contracts work, what expansion would cost, and what remains unknown.
 
-A useful research request might be:
-
-> I think rising demand could improve this company's cash flow. Organize public evidence on saleable production, realized prices and incremental capital spending. Give original sources, periods and units, identify the strongest counterevidence, and explain what is missing. Once we check the key facts, we can discuss which assumptions belong in the model and what would make us revise this view.
-
-You can give this request to your chosen coding or research agent. Share your reasoning and uncertainties so it can expand, check and challenge them. The calculation and review process then turns that conversation into a research record you can continue using.
-
-## Verify a number in its original context
-
-When an Agent supplies a number, open the original filing or company document and locate the relevant table, note and period. Confirm the company and business scope, then check units and definitions. “Production” may mean a quarterly total, annual total or daily average. “Profit” may include different adjustments. Comparisons and calculations depend on those definitions matching.
-
-Reported revenue growth also needs explanation: did it come from prices, sales volumes or an acquisition? The revenue change is a reported fact. Attributing it to competitive advantage is an interpretation. Expecting that advantage to continue next year is a forecast assumption. Making those steps explicit lets evidence support the reasoning and assumptions receive their own review.
-
-When sources conflict, preserve their definitions and provenance, then ask the Agent to help reconcile them. Check which information was available at the time as well. A later release can inform today's research but cannot establish what was known earlier. ThesisLedger preserves sources, periods, units and timing metadata to support these checks; you still need to verify the content against the original document.
-
-## Connect the business story to shareholder value
-
-Demand must become sales the company can deliver, and realized prices must turn those sales into revenue. Revenue then has to pay for operating costs, capital spending and working capital. That reveals how much cash growth leaves behind. Cash, debt and shares complete the discussion of value per share.
+One way to map the question is:
 
 ```text
-Demand and competition → feasible operations → revenue → costs and reinvestment → cash flow → value per share
+Industry demand → ability to serve it → saleable output and realized price
+                → costs and reinvestment → available cash → value per share
 ```
 
-This chain explains why an attractive growth story can still need substantial research. More production may require more capital. Accounting profit may not yet have become cash. Financing may change existing shareholders' participation. A scenario needs to carry these relationships through together.
+Ask the agent to work through the chain and show the evidence and gaps at each step. If it jumps from “demand is growing” to “the company will benefit,” ask it to fill in the missing links. An unknown input should stay visible until the evidence supports a value.
 
-The workbench exposes intermediate calculations so you can follow an assumption to its consequences. Missing inputs, infeasible growth or unexplained funding requirements remain model gaps. Those gaps identify the next research question instead of turning unsupported precision into a conclusion. The [research method](docs/METHODS.md) describes the formulas and the scope of each business model.
+## Turn your experience into questions an agent can check
 
-## Make the Agent's reasoning inspectable
+“Analyze this stock” leaves the agent guessing about the question that matters to you. Begin with your tentative view: what change could affect the company, why do you think it matters, which part comes from your experience, and which part is still a guess? Say what you are least sure about.
 
-A research agent handles two kinds of work. Organizing evidence, noticing conflicts and proposing useful questions require interpretation. Calculating cash flows, checking constraints and reproducing a result require explicit inputs and rules. ThesisLedger connects the two: suggestions point to evidence, and calculations point back to their inputs.
+For example:
 
-This collaboration method can guide your use of an external coding or research agent. The built-in Agent demonstrates a narrower scope: it follows a fixed review plan using four allowlisted tools and produces source-linked suggestions from selected evidence. Its tool records, inputs and calculations are inspectable. Hosted LLM tool calling is an optional route that has not been verified live.
+> I think rising natural-gas demand could improve this company's cash flow because ____. What I know best is ____. What I am least certain about is ____. Trace the question from demand through saleable output, realized price, costs, and reinvestment to cash flow and value per share. For important figures, give me the original source, period, unit, and definition. If the evidence is incomplete, show the gap and find the evidence most likely to challenge my view.
 
-Model changes have their own review process. Inspect an exact candidate and its calculated result before accepting it. Saved runs support offline replay. Matching results establish reproducibility; the reliability of a source and the plausibility of an assumption still require research judgment.
+That context gives the agent a defined task and makes your starting point visible. It can widen the search, compare materials, and point out what you may have missed. You still need to decide whether the questions fit the business and whether the evidence supports the conclusion.
 
-You can carry these design choices into your own agent: define its inputs, calculations, suggestions and acceptance process, then leave enough evidence for the next research session to continue. The [research protocol](agents/RESEARCH_PROTOCOL.md) describes the full method; the [Agent guide](agents/START_HERE.md) supplies an opening request for a coding or research agent.
+## Treat a citation as a path back to the source
 
-## Ask which step new information changes
+When you see a figure, check the company, business scope, reporting period, unit, and definition. “Production growth” might compare a daily rate with a period total, or a year before an acquisition with a year that includes the acquired business. If the scope does not match, correct arithmetic can still answer the wrong question.
 
-Define observable reasons to revise a thesis while you are forming it. Demand may keep growing, but delayed expansion, unchanged realized prices or persistently higher capital spending could still require a different cash-flow view. Ask the Agent to look for that counterevidence, then use your business understanding to assess its significance.
+Then ask what kind of statement you are reading. What did the company report? How are you interpreting it? What assumptions does the model add to say something about the future? Higher sales may be a reported result. Attributing them to a durable competitive advantage is an interpretation. Assuming that advantage will last for several years is a model assumption. Each may matter, but keeping them distinct shows what the conclusion depends on.
 
-A new filing may support the thesis, add context or invalidate its most important assumption. Review returns to the original reasoning to locate the affected step. Repeated coverage of one announcement still represents one piece of evidence.
+An agent's link is a route to the source, not proof that the source supports its sentence. Open the filing and check the passage, and confirm the information was available by the date of the decision. A real number from a filing does not automatically prove an explanation about the future.
 
-Monitoring therefore sends new filings into review alerts. After checking the contents, you can decide whether to propose a model update. SEC and the EXE company website keep separate source status; repeated verified filings are deduplicated, and source failures remain visible. A successful filing-list check does not establish that new financial figures have been reviewed.
+## Invite evidence that could change your view
 
-The local workbench provides views for evidence, scenarios, alerts and history. The [self-hosting guide](docs/SELF_HOSTING.md) describes deployment to your own server and email configuration. Cloud operation and actual email delivery remain unverified.
+If you already like a company, ask the agent to build the strongest alternative explanation it can find. Instead of requesting one bullish paragraph and one bearish paragraph, ask what observable evidence could distinguish the explanations. If you think stronger demand will lift realized prices, what could contract terms, regional differentials, or new capacity tell you? What result would make you reconsider?
 
-## Preserve a prediction so you can learn from it
+This turns an opinion into a claim you can revisit. Save the supporting evidence, counterevidence, and future observations with their dates. When a new disclosure arrives, compare it with what the original view expected. The agent can surface contradictions; you judge how much they matter in light of the business, your time horizon, and the question you are researching.
 
-Revisiting a forecast six months later should let you ask which assumptions held, which missed and why. Rewriting the prediction after seeing the result makes those questions difficult to answer.
+## Use a model to ask “what if?”
 
-ThesisLedger preserves earlier model revisions and freezes forecasts when a model is accepted. After a forecast's horizon, you can supply an attributable observation and compare it with the prediction. The record helps you examine your judgment and distinguish missing information, reasoning errors and changing conditions.
+A model makes assumptions and their relationships easier to inspect. Try a lower realized price, higher capital spending, or slower growth, then follow the effect on revenue, cash flow, and value per share under those assumptions. Change one important input at a time and inspect the intermediate calculations, not only the final number.
 
-The current project compares predictions with user-supplied observations. It does not implement a trading backtest or use investment returns to establish Agent quality. The [verification record](docs/VERIFICATION.md) separates computation, workflow checks and observed runtime behavior.
+In the EXE example, move **Realized price** from 3.5 to 4.0 USD/Mcfe and see how revenue, cash costs, capital spending, and FCFF respond. The result is conditional on the other premises staying fixed. The case uses a finite forecast period and zero terminal value, among other simplifications; it does not complete the financing, hedging, or dilution analysis. It demonstrates how to inspect inputs, run a scenario, and review the result, not a complete valuation.
 
-## Open the workbench
+Reproducing the same result from the same inputs and code shows that the calculation can be repeated. It does not prove the evidence is complete, the assumptions are reasonable, or the model captures every important feature of the business. Precision in the output cannot repair a weak premise.
 
-Download and extract this repository, or clone it. Open a terminal in the folder containing `run.py`. You need Python 3.10 or newer. The included illustration runs offline, with no dependency installation, data key or model account.
+## Ask what the current price already assumes
 
-```sh
+A scenario valuation tells you what follows from a set of assumptions; it does not tell you what the market price requires. For supported industrial and recurring-revenue models, provide a dated share price and the workbench can solve for one operating requirement while holding the other inputs fixed, then feed that requirement back through the forward model.
+
+This is a conditional calculation. One solved driver cannot explain every expectation in a market price, and it does not show that the company will meet that requirement. It turns “this looks cheap or expensive” into a more specific question to research. The EXE commodity case has no supplied market quote and does not support this reverse solution. See [research methods](docs/METHODS.md) for model scope and limitations.
+
+## When an alert arrives, review the reasoning it touches
+
+A new filing is not automatically good news or bad news. Open the source, identify what is new, then ask which part of the research it affects. Did production change? Did a contract or cost assumption change? Is a headline repeating information that was already disclosed?
+
+For a company on your watchlist, only material events that meet the alert conditions create a local alert. Other events may still be recorded. An alert does not change the accepted research baseline. Review the source, propose any update, inspect the before-and-after values, and explicitly accept it. Later, you can see which evidence and edits led to a changed view.
+
+## Keep a dated forecast to review later
+
+Before a forecast period begins, save the predicted value, assumptions, and date. When an attributable observation becomes available, compare it on the same basis. Keep the original forecast intact rather than adjusting it after the outcome is known.
+
+The workbench can freeze forecast cohorts, preserve earlier versions, and compare them with observations you provide after the horizon. Review process as well as outcome: a good result can include luck, and a poor one can reflect a change you could not have anticipated. One forecast says little about investing skill, but a full record can reveal which assumptions you repeatedly overstate or which operating constraints you tend to miss.
+
+## Make the workbench your own
+
+ThesisLedger runs locally by default and is designed for one researcher. Each company workspace can keep its research view, model inputs, evidence, events, alerts, and run history together. You can open the EXE case to explore the interface, or go straight to a workspace for your own company.
+
+Your research packet must follow the [input contract](docs/DATA_CONTRACT.md) and use structured JSON for the company baseline, model assumptions, and sourced evidence. The importer does not turn PDFs, spreadsheets, or notes into usable data, and it does not collect complete filings for any ticker. Current models cover selected industrial businesses, recurring-revenue businesses, and a bounded set of commodity producers. Other business types need a model adapter.
+
+You can use an AI agent of your choice alongside the workbench. The [collaboration guide](agents/START_HERE.md) explains how to prepare company data and event records. The built-in four-tool review flow is currently connected only to EXE; the browser's **Model assistant** is not connected to general custom workspaces. A hosted LLM is optional and must be configured by you. Live inference has not been verified, and selected research context is sent to the provider you configure. Review that context first.
+
+## Get the workbench running
+
+You need Python 3.10 or newer. Choose the path that fits your needs.
+
+### Optional: explore the offline EXE case
+
+The case needs no data key, model account, or third-party runtime dependency:
+
+~~~sh
 python3 run.py case EXE
-```
+~~~
 
-The browser opens a local workbench. If it does not, visit `http://127.0.0.1:8765/#lab` and open **Research Lab**. The interface currently uses English.
+Your browser should open automatically. If it does not, visit http://127.0.0.1:8765/#lab and open **Research Lab**. Change **Realized price**, select **Run evidence review**, and use **Verify saved run** to check whether a saved run reproduces.
 
-Change **Realized price** from 3.5 to 4.0 USD/Mcfe. Follow its effect through revenue, cash costs and capital spending to FCFF and conditional value per share. Click **Run evidence review** to inspect three suggestions, their evidence and actual calculations. Use **Verify saved run** to check whether the recorded run reproduces.
+The case uses Expand Energy's [FY2024](https://www.sec.gov/Archives/edgar/data/895126/000089512625000021/exe-20241231.htm) and [FY2025](https://www.sec.gov/Archives/edgar/data/895126/000089512626000011/exe-20251231.htm) filings. The FY2024 report includes Southwestern only for the portion of the year after its acquisition; FY2025 includes the full year. Their production figures therefore do not establish organic growth or a future production forecast. See the [case walkthrough](docs/EXE_CASE.md) for source and model limitations.
 
-Your sandbox stays separate from the accepted model. Existing model changes require explicit acceptance. Press Ctrl+C to stop the service; restart the same command to resume `.thesisledger/exe-case/`.
+### Start with your own company
 
-The illustration uses Expand Energy's [FY2024](https://www.sec.gov/Archives/edgar/data/895126/000089512625000021/exe-20241231.htm) and [FY2025](https://www.sec.gov/Archives/edgar/data/895126/000089512626000011/exe-20251231.htm) filings. It demonstrates how changing business boundaries, cash-flow definitions and a finite forecast affect research. Terminal value is zero, opening cash/debt is dated, and annual diluted EPS shares serve as a labeled proxy. Financing, dilution, hedging and other work needed for full investment valuation remain gaps. See the [case walkthrough](docs/EXE_CASE.md).
+Prepare a `my-company.json` file that follows the [input contract](docs/DATA_CONTRACT.md), then create your workspace directly:
 
-## Connect your own research and monitoring
+~~~sh
+python3 run.py init --workspace .thesisledger/my-research
+python3 run.py import my-company.json --workspace .thesisledger/my-research
+python3 run.py serve --workspace .thesisledger/my-research --port 8766
+~~~
 
-Prepare a reviewed public or deliberately redacted company packet using the [input contract](docs/DATA_CONTRACT.md), then import it into a separate workspace. The [user guide](docs/USER_GUIDE.md#bring-your-own-research) shows the steps. Built-in models cover industrial businesses, recurring customer revenue and a bounded commodity-producer illustration; other businesses need an appropriate model adapter.
+The JSON needs a company baseline, model assumptions, and sourced evidence. It is not included in the repository. Import creates a company record and cannot overwrite an existing baseline. To update one, propose a change, review the difference, and explicitly accept it. See the [user guide](docs/USER_GUIDE.md).
 
-Keep the example workbench running. In another terminal, check EXE's official company website:
+## Filing monitoring, SEC access, and alerts
 
-```sh
+The ready-made company-site monitor currently supports EXE only. It reads filing dates, types, accession numbers, and links, then creates a local alert. It does not download full filings or extract financial figures, and it does not run in the background by itself. Run a one-time check:
+
+~~~sh
 python3 run.py ir-watch EXE --once
-```
+~~~
 
-Open **Monitor & Timeline** or **Alerts** and refresh the saved workspace. This company-site route currently supports EXE and reads filing-list metadata. To connect SEC, follow the [application declaration steps](docs/USER_GUIDE.md#declare-your-application-to-sec) to supply a truthful application identity and contact email. The guide also covers continuous checks, pause/resume and access failures.
+For ongoing checks, start the process in a terminal. Monitoring another company's site needs a separate adapter. The workbench also accepts event JSON from a collector you provide. The periodic SEC filing monitor, `sec-watch`, also supports EXE only. A one-time public SEC snapshot by CIK uses the separate `sec` command; it does not enable ongoing monitoring for that company.
 
-The invented-company replay, `python3 run.py demo`, lets you practice conflicting evidence, source outages and model acceptance. See the [demo walkthrough](docs/QUICKSTART.md). Runtime workspaces and `.env` files are ignored. Known private fields are rejected, but free-form text still needs your review before sharing. The project executes no trades.
+### Follow a company you choose
 
-## Implementation and verification
+First import its research packet using the [input contract](docs/DATA_CONTRACT.md). In **Monitor & Timeline**, choose **Focused tracking**, **Observe**, or **Discover**, then turn on **Follow**. This adds an imported company to your watchlist; it does not fetch that company's filings.
 
-The runtime uses Python's standard library, SQLite and plain browser JavaScript, with no third-party runtime dependencies. A saved research run contains selected inputs, cutoff, tool decisions, results, configuration and hashes. Offline replay checks the code version and calculated result.
+To monitor another company's announcements or SEC filings, configure or write a collector for the public sources you choose. Have it write each item for review as a JSON file in an events directory. A minimal event can look like this:
 
-```sh
+~~~json
+{
+  "id": "ACME-2026-001",
+  "symbol": "ACME",
+  "kind": "ambiguous_evidence",
+  "title": "New filing to review",
+  "source_document": "https://investor.example.com/filing",
+  "published_at": "2026-01-15T13:00:00Z",
+  "decision_ts": "2026-01-15T14:00:00Z",
+  "verified": false,
+  "summary": "A filing was detected. Check the original document and reporting period before judging its research impact."
+}
+~~~
+
+This is a schema illustration, not real research data to copy unchanged. Replace `ACME`, the event ID, source link, and timestamps with those for a company you have imported. The publication time must be no later than the review cutoff; that cutoff must be no later than now and no earlier than the saved baseline. `ambiguous_evidence` means “material found, still needs verification”; it does not propose a model update. Use `driver_change` only after checking the evidence and confirming it maps to an input supported by the current model. See the [input contract](docs/DATA_CONTRACT.md#evidence-event) for event kinds and fields.
+
+With the workspace created as above and your collector writing JSON files to `./my-events/`, scan the folder once:
+
+~~~sh
+python3 run.py monitor --workspace .thesisledger/my-research --events-dir ./my-events --once
+~~~
+
+To keep checking that folder every 15 minutes, run:
+
+~~~sh
+python3 run.py monitor --workspace .thesisledger/my-research --events-dir ./my-events --interval 900
+~~~
+
+If you are not ready to write a collector, you can also record a manually reviewed public source as event JSON and import it with `--once`. In continuous mode, this command scans JSON files in the events directory. It does not fetch company pages, SEC filings, or market data for the collector. You need to run or schedule the collector separately. Repeated scans deduplicate the same event. A local alert is created only when the company is on your watchlist and the event meets the alert conditions. See the [data contract](docs/DATA_CONTRACT.md) for source, evidence, and event fields.
+
+Direct SEC requests need a truthful application identity and contact in the User-Agent. This is not an account registration or identity-document check. The v0.2.2 verification recorded an HTTP 403; recovery has not been verified. If SEC access is unavailable, read the original reports on Expand Energy's [annual reports page](https://www.expandenergy.com/investors/company-reports/) or its [2025 Form 10-K page](https://investors.expandenergy.com/sec-filings/sec-filing/10-k/0000895126-26-000011). The workbench does not download or parse these pages automatically. The [user guide](docs/USER_GUIDE.md#declare-your-application-to-sec) explains the identity header and manual alternatives.
+
+## Privacy and project boundaries
+
+Runtime data and `.env` files are ignored by Git. The importer rejects some common account and credential fields but cannot detect every personal detail in free-form text. Review personal material before importing it, and check what research context will be sent before enabling a hosted LLM.
+
+ThesisLedger does not trade. Cloud operation, hosted LLM inference, and actual email delivery were not verified in v0.2.2. Passing the fixed tests means the checked examples and paths passed; it does not establish accurate extraction for any company, reliable LLM research, or investment results.
+
+The v0.2.2 verification record reports 162 tests on Python 3.12 and 3.14, three UI state checks, and 19 fixed public-case evaluation checks. Run them locally:
+
+~~~sh
 python3 run.py benchmark
 python3 run.py evaluate
-```
+~~~
 
-The v0.2.2 [verification record](docs/VERIFICATION.md) reports 162 tests passed on Python 3.12 and 3.14, three UI controller checks and 19 fixed public-case benchmark checks. The benchmark covers 16 manually cross-checked facts from two EXE filings and three workflow guards. It does not measure unseen-company extraction, live LLM research quality or investment returns.
-
-The EXE company-site adapter passed one live check and generated one review alert. SEC direct recovery remains unverified after a classified HTTP 403 refusal. Hosted LLM inference, cloud operation and actual SMTP delivery also remain unverified.
-
-[Architecture](docs/ARCHITECTURE.md) · [Agent runtime](docs/AGENT_RUNTIME.md) · [Research method](docs/METHODS.md) · [Provenance](docs/PROVENANCE.md) · [Contributing](CONTRIBUTING.md) · [MIT license](LICENSE)
+Read the [architecture](docs/ARCHITECTURE.md), [Agent runtime](docs/AGENT_RUNTIME.md), [provenance](docs/PROVENANCE.md), [user guide](docs/USER_GUIDE.md), [contributing guide](CONTRIBUTING.md), or [MIT license](LICENSE).
